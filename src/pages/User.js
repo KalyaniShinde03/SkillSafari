@@ -25,22 +25,25 @@ const User = () => {
         <section className="login-section">
             <div className="container">
                 <div className="row justify-content-center align-items-center">
-                    <div className="col-lg-6 col-md-8 col-sm-10">
+                    <div className="col-lg-4 col-md-6 col-sm-8">
 
                         <div className="card shadow-lg">
                             <div className='card-header'>
-                                <h1 className="fs-4 card-title fw-bold mb-4 text-primary text-center">Login</h1>
+                                <h1 className="fs-4 card-title fw-bold text-primary text-center">Login</h1>
 
-                               
                             </div>
-                            <div className="card-body p-5">
-                            <div className="text-center mt-3">
+                            <div className="card-body">
+                                <div className="text-center">
                                     <img src={user} alt="logo" className="user-logo img-fluid" style={{ height: '80px', width: '80px' }} />
                                 </div>
                                 <form className="needs-validation" noValidate autoComplete="off">
                                     <div className="mb-3">
-                                        <label className="mb-2 text-muted" htmlFor="email">E-Mail Address</label>
+                                        <label className="mb-2 text-muted" htmlFor="email"><strong>E-Mail</strong></label>
+                                        <div className='col-12 input-group'>
+                          <span className='input-group-text'><i className='fa fa-envelope'></i></span>
+
                                         <input id="email" type="email" className={`form-control ${isFormSubmitted && !loginObj.email && 'is-invalid'}`} name="email" value={loginObj.email} onChange={(e) => changeFormValues(e, 'email')} required autoFocus />
+                                        </div>
                                         <div className="invalid-feedback">
                                             Please enter a valid email address.
                                         </div>
@@ -48,12 +51,16 @@ const User = () => {
 
                                     <div className="mb-3">
                                         <div className="mb-2 w-100">
-                                            <label className="text-muted" htmlFor="password">Password</label>
+                                            <label className="text-muted" htmlFor="password"><strong>Password</strong></label>
                                             <a href="forgot.html" className="float-end text-decoration-none">
                                                 Forgot Password?
                                             </a>
                                         </div>
+                                        <div className='col-12 input-group'>
+                          <span className='input-group-text'><i className='fa fa-lock'></i></span>
+
                                         <input id="password" type="password" className={`form-control ${isFormSubmitted && !loginObj.password && 'is-invalid'}`} name="password" value={loginObj.password} onChange={(e) => changeFormValues(e, 'password')} required />
+                                        </div>
                                         <div className="invalid-feedback">
                                             Please enter your password.
                                         </div>
